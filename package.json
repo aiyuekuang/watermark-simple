@@ -4,7 +4,7 @@
   "description": "最简单的react水印库",
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "lib": "npm run cleanLib && babel src/components --out-dir lib && npm run copy",
+    "lib": "npm run cleanLib && babel src/components --out-dir lib",
     "build": "npm run cleanDist &&cross-env NODE_ENV=production webpack --mode production --progress && npm run copy",
     "cleanDist": "rd /s/q dist && mkdir dist",
     "cleanLib": "rd /s/q lib && mkdir lib",
