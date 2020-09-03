@@ -1,6 +1,6 @@
 {
   "name": "watermark-simple",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "最简单的react水印库",
   "scripts": {
     "start": "webpack-dev-server --mode development",
