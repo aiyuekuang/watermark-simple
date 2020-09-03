@@ -1,0 +1,96 @@
+@charset "UTF-8";
+@import "./rest";
+@import "./xiangmude";
+@import "static/anim";
+@import "../../node_modules/nprogress/nprogress.css";
+
+.up_index {
+  background: $huibg;
+  height: 100vh;
+  padding: 20px;
+  .index {
+    padding: 20px;
+
+    > div {
+      background: #fff;
+      margin-top: 20px;
+      padding: 20px 10px;
+      border-radius: 4px;
+    }
+  }
+
+  .list {
+    @include hp2();
+
+    > div {
+      width: 20%;
+      text-align: center;
+      margin-top: 10px;
+
+      &:hover {
+        @extend .tada, .animated;
+      }
+
+      img {
+        width: 90%;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .table {
+    padding: 10px;
+  }
+
+  .tit {
+    padding: 20px;
+    font-size: 20px;
+    color: #000;
+  }
+
+  .chart {
+    @include hp();
+    padding: 20px;
+
+    > div {
+      background: $huibg;
+      width: 24%;
+      padding: 20px;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+  }
+}
+
+.dynamic-delete-button {
+  cursor: pointer;
+  position: relative;
+  font-size: 24px;
+  color: #999;
+  transition: all 0.3s;
+}
+
+.dynamic-delete-button:hover {
+  color: #777;
+}
+
+.dynamic-delete-button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.common_inline_select {
+  @include hp2();
+}
+
+.ck {
+  width: 200px;
+  height: 100px;
+  border: $biankuang;
+  > div {
+    width: 60px;
+    height: 60px;
+    padding-top: 20%;
+    background: red;
+  }
+}

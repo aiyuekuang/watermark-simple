@@ -1,0 +1,443 @@
+@charset "UTF-8";
+@import "./rest";
+@import "./static/animate.css";
+@import "./ani";
+@import "../../node_modules/braft-editor/dist/index.css";
+//表单和树和表格边缘对齐
+$up_table_warp_bottom: 0;
+
+$lanse: #1890ff;
+$chengse: rgba(239, 141, 70, 1);
+$huise: #e7e7e7;
+$huizi: #666666;
+$huibg: #f0f5ff;
+$xiaohuizi: #999999;
+$kuan: 1160px;
+$biankuang: 1px solid $huise;
+
+.none_data {
+  color: $huizi;
+  @include juzhong2();
+  min-height: 100px;
+
+  svg {
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+}
+
+.up_table_warp {
+  width: 100%;
+  height: 100%;
+
+  .ant-table-tbody {
+    td {
+      font-size: 13px;
+      word-break: break-all;
+    }
+  }
+}
+
+.up_table_warp_bottom {
+  @include hp(stretch);
+
+  > div {
+  }
+}
+
+
+.table_className {
+  table {
+    border-radius: 4px;
+  }
+}
+
+.up_table_warp_bottom_l {
+  min-width: 160px;
+  padding: $up_table_warp_bottom;
+
+  .up_tree_warp {
+    margin: 0 auto;
+  }
+}
+
+.up_table_warp_bottom_r {
+  //flex-grow: 2;
+  flex: 1;
+  min-width: 375px;
+  margin-left: 6px;
+  padding: $up_table_warp_bottom;
+}
+
+.up_table_warp_bottom_r_s {
+  width: 100%;
+  padding: $up_table_warp_bottom;
+}
+
+$up_tree_head_height: 38px;
+.up_tree_head {
+  @include hp();
+  line-height: $up_tree_head_height;
+  color: #000;
+  border-bottom: $biankuang;
+}
+
+.up_tree_head_tit {
+  text-indent: 6px;
+}
+
+.up_tree_warp {
+  border: $biankuang;
+  border-radius: 4px;
+  height: 100%;
+  margin: 10px auto;
+}
+
+.up_tree_body {
+  padding: 6px;
+  overflow-y: scroll;
+}
+
+.loading {
+  text-align: center;
+  border-radius: 4px;
+  padding: 30px 50px;
+  margin: 20px 0;
+}
+
+.up_tree_search {
+  padding: 6px;
+}
+
+.up_tree_btn {
+  text-align: right;
+  padding: 8px 0;
+}
+
+.up_tree_eidt_warp {
+  @include hp(flex-start);
+}
+
+.up_tree_eidt_warp_l {
+  //min-width: 225px;
+}
+
+.up_tree_eidt_warp_r {
+  width: 500px;
+}
+
+.up_tree_eidt_warp_r_tab {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.up_tree_eidt_form {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.up_tree_eidt_form_btn {
+  @include hp();
+}
+
+%up_table_form_common {
+  @include hp3(23%, 40px, 1%, 0);
+
+  > div {
+    animation: show 1s;
+    will-change: transform;
+    display: flex;
+    align-items: center;
+
+    > div {
+      width: 100%;
+    }
+  }
+}
+
+.up_table_form {
+  //@include hp2();
+  //>div{
+  //  min-width: 23%;
+  //  flex: 1;
+  //  margin-right: 2%;
+  //}
+  @extend %up_table_form_common;
+
+  .ant-form-item-label-left {
+    text-align-last: justify;
+    text-align: justify;
+  }
+}
+
+.up_table_form_search {
+  @include hp2();
+  > div {
+    margin: 0 4px;
+  }
+
+  .ant-form-item {
+    margin-bottom: 0;
+  }
+}
+
+.up_table_form_btn {
+  flex: 1 0 0;
+  line-height: 40px;
+  text-align: left;
+}
+
+.up_table_form_add_list {
+  //@include hp2();
+  width: 100%;
+  display: inline-grid;
+  //label{
+  //  white-space:normal;
+  //}
+}
+
+
+.up_table_warp_btn {
+  @include hp2();
+  margin-bottom: 6px;
+
+  > div {
+    margin-right: 6px;
+  }
+}
+
+.up_tree_head_show {
+  background: $huibg;
+  width: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.up_table_warp_btn_tree_btn {
+  line-height: 30px;
+  @extend .up_tree_head_show;
+}
+
+.up_table_form_add_btn {
+  @include hp(flex-start, flex-start);
+
+  > div {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.up_ueditor, .edui-gray {
+  line-height: normal;
+
+  * {
+    box-sizing: content-box;
+
+    &:after, &:before {
+      box-sizing: content-box;
+    }
+  }
+}
+
+.braft_warp {
+  .component-wrapper {
+    display: inline-block;
+  }
+}
+
+.braft_warp_top {
+  border: $biankuang;
+  border-radius: 8px;
+}
+
+.braft_warp_btn {
+  @include hp();
+  padding: 8px 0;
+}
+
+.up_g2_warp {
+  margin: 0 auto;
+  text-align: center;
+
+  .mainTitle {
+    font-size: 18px;
+    color: #333333;
+    text-align: center;
+  }
+
+  .subTitle {
+    font-size: 14px;
+    color: #bbbbbb;
+    text-align: center;
+  }
+}
+
+.ani_warp {
+  > div {
+    will-change: animation;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+}
+
+.up_table_warp_search {
+  margin-bottom: 20px;
+}
+
+.up_table_warp_top {
+  padding: 5px 0 0 0;
+  margin: 0 auto 10px auto;
+  border-bottom: $biankuang;
+}
+
+.up_table_warp_middle {
+  padding:0 0 10px 0;
+  margin: 0 auto 10px auto;
+  border-bottom: $biankuang;
+
+}
+
+.up_table_warp_btn_submit {
+  text-align: left;
+}
+
+.up_tab_select {
+  @include hp();
+}
+
+.up_tab_select_label {
+  min-width: 50px;
+  font-weight: bold;
+}
+
+.up_tab_select_list_act {
+  color: #fff;
+}
+
+.up_tab_select_list {
+  flex: 1;
+  @include hp2();
+
+  > div {
+    padding: 0 8px;
+    margin: 0 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: transparent 1px solid;
+    @extend %all_ani;
+
+    &:hover {
+      background: #ebebeb;
+    }
+  }
+}
+
+.up_tab_select_list_2 {
+  flex: 1;
+}
+
+.site-checkbox-all-wrapper {
+  border-bottom: 1px solid #e9e9e9;
+  cursor: not-allowed;
+}
+
+#components-transfer-demo-table-transfer .ant-table td {
+  background: transparent;
+}
+
+.anup_transfer {
+  .ant-transfer-list {
+    background: #fff;
+  }
+}
+
+.inlineBlock {
+  display: inline-block;
+}
+
+.anup_excel_body {
+  height: 100%;
+  width: 100%;
+}
+
+.anup_form_ques_opt {
+  display: inline-block;
+  @include hengpai();
+  vertical-align: middle;
+
+  > div {
+    line-height: 14px;
+    vertical-align: middle;
+  }
+
+  svg {
+    vertical-align: middle;
+  }
+
+  .ant-checkbox {
+    vertical-align: middle;
+
+    input {
+      vertical-align: middle;
+    }
+
+  }
+}
+
+.anup_form_custom {
+  display: inline-block;
+  padding: 5px 20px 5px 0;
+}
+
+.anup_form_custom_warp {
+  @include hp();
+}
+
+.anup_form_custom_warp_l {
+  flex: 1;
+}
+
+.anup_form_custom_warp_r {
+  width: 90px;
+}
+
+.braft_warp_top {
+  border-radius: 4px;
+  border: $biankuang;
+}
+
+.editable-row .ant-form-item-explain {
+  position: absolute;
+  top: 100%;
+  font-size: 12px;
+}
+
+.anup_cascader_warp {
+  @include hp();
+}
+
+.anup_cascader_warp_l {
+  margin-right: 5px;
+}
+
+.anup_cascader_warp_r {
+  flex: 1;
+}
+
+.anup_home_body_tabs{
+  width: 100%;
+  flex-shrink:0;
+  background: #fff;
+  padding:5px 5px 0 5px;
+  .ant-tabs-nav{
+    margin: 0!important;
+  }
+}
+
+.anup_home_body_tabs_body{
+  background: #fff;
+  padding: 6px 20px;
+}
