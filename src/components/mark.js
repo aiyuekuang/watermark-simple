@@ -9,8 +9,8 @@ let getBase64Image = ({text = "测试文字", fontSize = 16, color = "rgb(198,19
   context.font = `bold ${fontSize}px 微团雅黑`;
   context.translate(width * 0.1, height * 0.9);
   context.rotate(rotate * Math.PI / -12)
-  context.fillText(text, 0, 2);
   context.fillStyle = color;
+  context.fillText(text, 0, 2);
 
 
   return canvas.toDataURL();
@@ -19,10 +19,11 @@ let getBase64Image = ({text = "测试文字", fontSize = 16, color = "rgb(198,19
 let defaultProps = {
   text: "测试文字",
   fontSize: 16,
-  color: "rgb(198,197,197)",
+  color: "rgb(213,213,213)",
   height: 200,
   width: 300,
-  rotate: 1
+  rotate: 1,
+  style:{}
 }
 
 export default function Index(prop) {
@@ -30,7 +31,7 @@ export default function Index(prop) {
   let props = {
     ...defaultProps, ...prop
   }
-  const {className,onClick} = props;
+  const {className,onClick,style} = props;
   let img = getBase64Image({...props})
 
   useEffect(() => {
@@ -41,7 +42,7 @@ export default function Index(prop) {
 
   return (
     <div className={className} onClick={onClick} style={{
-      backgroundImage:`url('${img}')`
+      backgroundImage:`url('${img}')`,...style
     }}>
       {props.children}
     </div>

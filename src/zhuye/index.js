@@ -2,7 +2,7 @@
  * Created by zengtao on 2017/5/19.
  */
 import React from 'react';
-import WM from "@components/index"
+import WM from "@components/mark"
 import "../style/ztao.scss"
 
 
@@ -26,7 +26,7 @@ export default class Index extends React.Component {
   render() {
     return (
       <div className="up_index">
-        <WM/>
+        <WM style={{height:"100%"}}/>
       </div>
     )
   }
