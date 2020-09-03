@@ -38,7 +38,6 @@ import { WM } from "watermark-simple";
 4. height（int）：单个水印的空间高度（默认：200）
 5. width（int）: 单个水印的空间宽度（默认：300）
 6. rotate（int）：旋转的角度（默认：1）
-7. 
 
 ### 图片示例
 
