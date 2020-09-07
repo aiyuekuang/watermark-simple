@@ -6,7 +6,7 @@ let getBase64Image = ({text = "测试文字", fontSize = 16, color = "rgb(198,19
   canvas.width = width
   let context = canvas.getContext('2d');
   context.textBaseline = 'top';
-  context.font = `bold ${fontSize}px 微团雅黑`;
+  context.font = `${fontSize}px 微团雅黑`;
   context.translate(width * 0.1, height * 0.9);
   context.rotate(rotate * Math.PI / -12)
   context.fillStyle = color;
